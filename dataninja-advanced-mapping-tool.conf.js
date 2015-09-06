@@ -189,7 +189,7 @@ var mapConfig = {
             // Inherits attributes from geoSource named here
             source: 'file',
             path: 'geo/europe/',
-            filename: 'nuts0.topojson',
+            filename: 'nuts0_no-enclaves.topojson',
             format: 'topojson',
             
             // Inherits attributes from geoType named here
@@ -207,7 +207,7 @@ var mapConfig = {
                 id: 'NUTS_ID',
 
                 // Key of label values used for tooltip
-                label: 'NAME'
+                label: 'NUTS_NAME'
             }
         }
     ],
