@@ -4,9 +4,4 @@ tmp/
 demo/welfarebo/
 demo/donnechecontano/
 demo/idrorischio/
-/*.conf.js
-/*.custom.css
-index.html
-debug.html
 *.zip
-shapes/*
