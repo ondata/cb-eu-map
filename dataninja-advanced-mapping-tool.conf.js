@@ -93,8 +93,8 @@ var mapConfig = {
 
         // Center of the map
         center: {
-            lat: 48,
-            lng: 3
+            lat: 47,
+            lng: 9
         },
 
         /* Attribution line, see http://leafletjs.com/reference.html#control-attribution
@@ -113,7 +113,7 @@ var mapConfig = {
     summary: {
 
         // Enable or not
-        active: false,
+        active: true,
 
         // Position respect to map
         position: 'right',
@@ -122,13 +122,13 @@ var mapConfig = {
         image: 'icons/info.png',
 
         // Title on control mouseover
-        title: 'Further informations',
+        title: 'Confiscations for billion euros',
 
         // Initial status (can be overwritten by 'summary' get parameter)
         closed: false,
 
         // HTML content of the description
-        content: '<p></p>'
+        content: '<p><h3>Confiscations for billion euros</h3>Over the last decade the European Union has started to fight back against those activities. The transnational nature of criminal investments and the presence of ‘liquid’ crime groups , which are able to adapt to different situations and overcome any legislative hurdle, required an intervention from the European authorities. The freezing and confiscation of assets and proceeds of crime has become a priority in the EU battle against organised crime.</p>'
     },
 
     // Tooltip control on mouse over regions in vectorial geolayers
@@ -265,26 +265,26 @@ var mapConfig = {
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
-                    {
-                        column: 'Number of assets',
-                        label: '',
-                        description: ''
-                    },
+                //    {
+                //        column: 'Number of assets',
+                //        label: '',
+                //        description: ''
+                //    }
                     {
                         column: 'Value of assets',
                         label: '',
                         description: ''
                     },
-                    {
-                        column: 'Number of buildings and lands',
-                        label: '',
-                        description: ''
-                    },
-                    {
-                        column: 'Value of buildings and lands',
-                        label: '',
-                        description: ''
-                    }
+                //    {
+                //        column: 'Number of buildings and lands',
+                //        label: '',
+                //        description: ''
+                //    },
+                //    {
+                //        column: 'Value of buildings and lands',
+                //        label: '',
+                //        description: ''
+                //    }
                     //...
                 ],
 
@@ -344,7 +344,7 @@ var mapConfig = {
         downloads: {
 
             // Enable or not
-            active: false,
+            active: true,
 
             // License of downloadable datasets
             license: 'Creative Commons Attribution <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0 International</a>.',
@@ -354,7 +354,7 @@ var mapConfig = {
             // If empty, you can use absolute path for every icon or different relative paths
             //path: 'icons/',
 
-            // Same icon for all downloads
+            // Same icon for all downloadfalses
             // If missing or empty, it will be download.png
             image: '',
 
@@ -391,10 +391,10 @@ var mapConfig = {
         shareButtons: {
 
             // Enable or not
-            active: true,
+            active: false,
 
             // Text prepended to title of each share icon (+ 'su [Twitter | Facebook | Google Plus | Linkedin | ...]')
-            title: 'Condividi',
+            title: 'Share',
 
             // If missing or empty, it will be used the url map with proper get parameters to show selected region
             // Otherwise, this custom url will be used
@@ -598,7 +598,7 @@ var mapConfig = {
         screenshot: {
 
             // Enable or not
-            active: false,
+            active: true,
 
             // Title on mouseover
             title: 'Take a screenshot',
