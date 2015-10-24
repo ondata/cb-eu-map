@@ -85,16 +85,16 @@ var mapConfig = {
 
         // Zoom options
         zoom: {
-            init: 5,
-            max: 6,
-            min: 4,
+            init: 6,
+            max: 8,
+            min: 5,
             scrollWheel: true
         },
 
         // Center of the map
         center: {
-            lat: 47,
-            lng: 9
+            lat: 46.65,
+            lng: 12.35
         },
 
         /* Attribution line, see http://leafletjs.com/reference.html#control-attribution
