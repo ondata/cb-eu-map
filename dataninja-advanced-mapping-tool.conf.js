@@ -85,9 +85,9 @@ var mapConfig = {
 
         // Zoom options
         zoom: {
-            init: 6,
+            init: 5,
             max: 8,
-            min: 5,
+            min: 4,
             scrollWheel: true
         },
 
@@ -173,7 +173,7 @@ var mapConfig = {
         // Max number of items for an always open menu.
         // If items (geo layers, datasets or columns) are more, menu will collapse.
         // If missing or 0, it will be 3.
-        maxItems: 3
+        maxItems: 6
 
     },
 
@@ -208,6 +208,110 @@ var mapConfig = {
 
                 // Key of label values used for tooltip
                 label: 'NUTS_NAME'
+            }
+        },
+        {
+
+            // Inherits attributes from geoSource named here
+            source: 'file',
+            path: 'geo/italy/',
+            filename: 'regions.topojson',
+            format: 'topojson',
+            
+            // Inherits attributes from geoType named here
+            type: 'thematic',
+
+            schema: {
+
+                // Key name of layer
+                name: 'italy',
+
+                // Menu label for layer entry
+                menu: 'Italy regions',
+
+                // Key of id values used for joining
+                id: 'COD_REG',
+
+                // Key of label values used for tooltip
+                label: 'NOME_REG'
+            }
+        },
+        {
+
+            // Inherits attributes from geoSource named here
+            source: 'file',
+            path: 'geo/spain/',
+            filename: 'Spain_provinces_0-01.topojson',
+            format: 'topojson',
+            
+            // Inherits attributes from geoType named here
+            type: 'thematic',
+
+            schema: {
+
+                // Key name of layer
+                name: 'spain',
+
+                // Menu label for layer entry
+                menu: 'Spain provinces',
+
+                // Key of id values used for joining
+                id: 'Code',
+
+                // Key of label values used for tooltip
+                label: 'Name'
+            }
+        },
+        {
+
+            // Inherits attributes from geoSource named here
+            source: 'file',
+            path: 'geo/france/',
+            filename: 'France_depts_0-01.topojson',
+            format: 'topojson',
+            
+            // Inherits attributes from geoType named here
+            type: 'thematic',
+
+            schema: {
+
+                // Key name of layer
+                name: 'france',
+
+                // Menu label for layer entry
+                menu: 'France departments',
+
+                // Key of id values used for joining
+                id: 'Dept_Code',
+
+                // Key of label values used for tooltip
+                label: 'Dept_Name'
+            }
+        },
+        {
+
+            // Inherits attributes from geoSource named here
+            source: 'file',
+            path: 'geo/germany/',
+            filename: 'Germany_lands_0-01.topojson',
+            format: 'topojson',
+            
+            // Inherits attributes from geoType named here
+            type: 'thematic',
+
+            schema: {
+
+                // Key name of layer
+                name: 'germany',
+
+                // Menu label for layer entry
+                menu: 'Germany lands',
+
+                // Key of id values used for joining
+                id: 'Code',
+
+                // Key of label values used for tooltip
+                label: 'Name'
             }
         }
     ],
@@ -274,7 +378,325 @@ var mapConfig = {
                         column: 'Value of assets',
                         label: '',
                         description: ''
+                    }
+                //    {
+                //        column: 'Number of buildings and lands',
+                //        label: '',
+                //        description: ''
+                //    },
+                //    {
+                //        column: 'Value of buildings and lands',
+                //        label: '',
+                //        description: ''
+                //    }
+                    //...
+                ],
+
+                // Columns aggregation
+                groups: {}
+                
+            }
+        },
+        {
+            
+            // Inherits attributes from dataSource named here
+            source: 'file',
+            path: 'data/',
+            filename: 'cb-spain-data.tsv',
+            format: 'tsv',
+
+            // Transformation of the ajax results before their using
+            transform: function(res) {
+                return res;
+            },
+
+            // Custom parse function name from string to number
+            // If missing, formatting is performing by parseInt(v) || parseFloat(v) || v
+            // You can also define a custom function (k,v) { return v; }
+            //parse: 'parseFloat',
+           
+            // Format specifier for d3.format(), see https://github.com/mbostock/d3/wiki/Formatting#d3_format
+            // For string template, see http://docs.python.org/release/3.1.3/library/string.html#formatspec
+            // If missing or return empty string, default formatting function is d3.format(',d')(v) || d3.format(',.2f')(v) || v
+            formatter: function(k,v) {
+                return '';
+            }, 
+
+            // Inherits attributes from dataType named here
+            type: 'choropleth',
+            bins: 5,
+            precision: 0,
+            palette: 'Reds',
+
+            
+            schema: {
+                
+                // Key name of dataset
+                name: 'cb-spain',
+
+                // Menu label for layer entry
+                label: 'Confiscation in Spain',
+
+                // Key name of layer data refer to
+                layer: 'spain',
+
+                // Key of id values used for join
+                id: 'Codigo',
+
+                // Legend description
+                description: '',
+
+                // Choroplethable columns with custom label, description and bins number
+                menu: [
+                //    {
+                //        column: 'Number of assets',
+                //        label: '',
+                //        description: ''
+                //    }
+                    {
+                        column: '2013',
+                        label: 'Confiscation 2013',
+                        description: ''
+                    }
+                //    {
+                //        column: 'Number of buildings and lands',
+                //        label: '',
+                //        description: ''
+                //    },
+                //    {
+                //        column: 'Value of buildings and lands',
+                //        label: '',
+                //        description: ''
+                //    }
+                    //...
+                ],
+
+                // Columns aggregation
+                groups: {}
+                
+            }
+        },
+        {
+            
+            // Inherits attributes from dataSource named here
+            source: 'file',
+            path: 'data/',
+            filename: 'cb-france-data.tsv',
+            format: 'tsv',
+
+            // Transformation of the ajax results before their using
+            transform: function(res) {
+                return res;
+            },
+
+            // Custom parse function name from string to number
+            // If missing, formatting is performing by parseInt(v) || parseFloat(v) || v
+            // You can also define a custom function (k,v) { return v; }
+            //parse: 'parseFloat',
+           
+            // Format specifier for d3.format(), see https://github.com/mbostock/d3/wiki/Formatting#d3_format
+            // For string template, see http://docs.python.org/release/3.1.3/library/string.html#formatspec
+            // If missing or return empty string, default formatting function is d3.format(',d')(v) || d3.format(',.2f')(v) || v
+            formatter: function(k,v) {
+                return '';
+            }, 
+
+            // Inherits attributes from dataType named here
+            type: 'choropleth',
+            bins: 5,
+            precision: 0,
+            palette: 'Reds',
+
+            
+            schema: {
+                
+                // Key name of dataset
+                name: 'cb-france',
+
+                // Menu label for layer entry
+                label: 'Confiscation in France',
+
+                // Key name of layer data refer to
+                layer: 'france',
+
+                // Key of id values used for join
+                id: 'Code',
+
+                // Legend description
+                description: '',
+
+                // Choroplethable columns with custom label, description and bins number
+                menu: [
+                    {
+                        column: 'Cash seizured registered',
+                        label: '',
+                        description: ''
                     },
+                    {
+                        column: 'Real estate seizures registered',
+                        label: '',
+                        description: ''
+                    }
+                //    {
+                //        column: 'Number of buildings and lands',
+                //        label: '',
+                //        description: ''
+                //    },
+                //    {
+                //        column: 'Value of buildings and lands',
+                //        label: '',
+                //        description: ''
+                //    }
+                    //...
+                ],
+
+                // Columns aggregation
+                groups: {}
+                
+            }
+        },
+        {
+            
+            // Inherits attributes from dataSource named here
+            source: 'file',
+            path: 'data/',
+            filename: 'cb-germany-data.tsv',
+            format: 'tsv',
+
+            // Transformation of the ajax results before their using
+            transform: function(res) {
+                return res;
+            },
+
+            // Custom parse function name from string to number
+            // If missing, formatting is performing by parseInt(v) || parseFloat(v) || v
+            // You can also define a custom function (k,v) { return v; }
+            parse: function(k,v) {
+              return (k === "Code" ? v : (parseInt(v) || v));
+            },
+           
+            // Format specifier for d3.format(), see https://github.com/mbostock/d3/wiki/Formatting#d3_format
+            // For string template, see http://docs.python.org/release/3.1.3/library/string.html#formatspec
+            // If missing or return empty string, default formatting function is d3.format(',d')(v) || d3.format(',.2f')(v) || v
+            formatter: function(k,v) {
+                return '';
+            }, 
+
+            // Inherits attributes from dataType named here
+            type: 'choropleth',
+            bins: 5,
+            precision: 0,
+            palette: 'Reds',
+
+            
+            schema: {
+                
+                // Key name of dataset
+                name: 'cb-germany',
+
+                // Menu label for layer entry
+                label: 'Confiscation in Germany',
+
+                // Key name of layer data refer to
+                layer: 'germany',
+
+                // Key of id values used for join
+                id: 'Code',
+
+                // Legend description
+                description: '',
+
+                // Choroplethable columns with custom label, description and bins number
+                menu: [
+                //    {
+                //        column: 'Number of assets',
+                //        label: '',
+                //        description: ''
+                //    }
+                    {
+                        column: '2013',
+                        label: 'Confiscation amount in 2013',
+                        description: ''
+                    }
+                //    {
+                //        column: 'Number of buildings and lands',
+                //        label: '',
+                //        description: ''
+                //    },
+                //    {
+                //        column: 'Value of buildings and lands',
+                //        label: '',
+                //        description: ''
+                //    }
+                    //...
+                ],
+
+                // Columns aggregation
+                groups: {}
+                
+            }
+        },
+        {
+            
+            // Inherits attributes from dataSource named here
+            source: 'file',
+            path: 'data/',
+            filename: 'cb-italy-data.tsv',
+            format: 'tsv',
+
+            // Transformation of the ajax results before their using
+            transform: function(res) {
+                return res;
+            },
+
+            // Custom parse function name from string to number
+            // If missing, formatting is performing by parseInt(v) || parseFloat(v) || v
+            // You can also define a custom function (k,v) { return v; }
+            //parse: 'parseFloat',
+           
+            // Format specifier for d3.format(), see https://github.com/mbostock/d3/wiki/Formatting#d3_format
+            // For string template, see http://docs.python.org/release/3.1.3/library/string.html#formatspec
+            // If missing or return empty string, default formatting function is d3.format(',d')(v) || d3.format(',.2f')(v) || v
+            formatter: function(k,v) {
+                return '';
+            }, 
+
+            // Inherits attributes from dataType named here
+            type: 'choropleth',
+            bins: 5,
+            precision: 0,
+            palette: 'Reds',
+
+            
+            schema: {
+                
+                // Key name of dataset
+                name: 'cb-italy',
+
+                // Menu label for layer entry
+                label: 'Confiscation in Italy',
+
+                // Key name of layer data refer to
+                layer: 'italy',
+
+                // Key of id values used for join
+                id: 'REG_CODE',
+
+                // Legend description
+                description: '',
+
+                // Choroplethable columns with custom label, description and bins number
+                menu: [
+                    {
+                        column: 'Numero beni',
+                        label: 'Numero beni confiscati',
+                        description: ''
+                    }
+                //    {
+                //        column: 'Valore',
+                //        label: 'Valore beni confiscati',
+                //        description: ''
+                //    }
                 //    {
                 //        column: 'Number of buildings and lands',
                 //        label: '',
