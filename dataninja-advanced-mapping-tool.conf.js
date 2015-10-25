@@ -371,7 +371,7 @@ var mapConfig = {
 
             // Inherits attributes from dataType named here
             type: 'choropleth',
-            bins: 3,
+            bins: 4,
             precision: 0,
             palette: 'Reds',
 
