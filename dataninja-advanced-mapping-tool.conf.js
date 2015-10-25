@@ -313,6 +313,32 @@ var mapConfig = {
                 // Key of label values used for tooltip
                 label: 'Name'
             }
+        },
+        {
+
+            // Inherits attributes from geoSource named here
+            source: 'file',
+            path: 'geo/uk/',
+            filename: 'England_hmcts.topojson',
+            format: 'topojson',
+            
+            // Inherits attributes from geoType named here
+            type: 'thematic',
+
+            schema: {
+
+                // Key name of layer
+                name: 'uk',
+
+                // Menu label for layer entry
+                menu: 'UK HMCTS',
+
+                // Key of id values used for joining
+                id: 'Name',
+
+                // Key of label values used for tooltip
+                label: 'Name'
+            }
         }
     ],
 
@@ -697,6 +723,85 @@ var mapConfig = {
                 //        label: 'Valore beni confiscati',
                 //        description: ''
                 //    }
+                //    {
+                //        column: 'Number of buildings and lands',
+                //        label: '',
+                //        description: ''
+                //    },
+                //    {
+                //        column: 'Value of buildings and lands',
+                //        label: '',
+                //        description: ''
+                //    }
+                    //...
+                ],
+
+                // Columns aggregation
+                groups: {}
+                
+            }
+        },
+        {
+            
+            // Inherits attributes from dataSource named here
+            source: 'file',
+            path: 'data/',
+            filename: 'cb-uk-data.tsv',
+            format: 'tsv',
+
+            // Transformation of the ajax results before their using
+            transform: function(res) {
+                return res;
+            },
+
+            // Custom parse function name from string to number
+            // If missing, formatting is performing by parseInt(v) || parseFloat(v) || v
+            // You can also define a custom function (k,v) { return v; }
+            //parse: 'parseFloat',
+           
+            // Format specifier for d3.format(), see https://github.com/mbostock/d3/wiki/Formatting#d3_format
+            // For string template, see http://docs.python.org/release/3.1.3/library/string.html#formatspec
+            // If missing or return empty string, default formatting function is d3.format(',d')(v) || d3.format(',.2f')(v) || v
+            formatter: function(k,v) {
+                return '';
+            }, 
+
+            // Inherits attributes from dataType named here
+            type: 'choropleth',
+            bins: 5,
+            precision: 0,
+            palette: 'Reds',
+
+            
+            schema: {
+                
+                // Key name of dataset
+                name: 'cb-uk',
+
+                // Menu label for layer entry
+                label: 'Confiscation in UK',
+
+                // Key name of layer data refer to
+                layer: 'uk',
+
+                // Key of id values used for join
+                id: 'HMCTS AREA',
+
+                // Legend description
+                description: '',
+
+                // Choroplethable columns with custom label, description and bins number
+                menu: [
+                    {
+                        column: 'Volume imposed 2014',
+                        label: '',
+                        description: ''
+                    },
+                    {
+                        column: 'Value imposed 2014',
+                        label: '',
+                        description: ''
+                    }
                 //    {
                 //        column: 'Number of buildings and lands',
                 //        label: '',
