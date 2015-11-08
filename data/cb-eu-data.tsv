@@ -1,6 +1,6 @@
-Id	Country	Number of assets	Value of assets	Number of buildings and lands	Value of buildings and lands	Last update
-FR	France	18653	168760000	500	28324021,76	2012
-DE	Germany	0	421565064,95	145	121565064,95	2013
-IT	Italy	3649	1615500000	10716	621565064,95	2012
-ES	Spain	2931	35334321	173	41565064,95	2013
-UK	United Kingdom	13255	188317934,42	2052	28690144,01	2014
+Id	Country	Number of assets	Value of assets
+FR	France	23530	1148500000
+DE	Germany	NA	251020068
+IT	Italy	3649	1615500000
+ES	Spain	22013	35334321
+UK	United Kingdom	13255	412455027

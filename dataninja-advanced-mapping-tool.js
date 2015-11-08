@@ -426,13 +426,29 @@ if (mapConfig) {
                     });
                     break;
 
-                default:
-                    myFormat = d3.locale();
+                case 'en':
+                    myFormat = d3.locale({
+                        "decimal": ".",
+                        "thousands": ",",
+                        "grouping": [3],
+                        "currency": ["€ ", ""],
+                        "dateTime": "%a %b %e %X %Y",
+                        "date": "%m/%d/%Y",
+                        "time": "%H:%M:%S",
+                        "periods": ["AM", "PM"],
+                        "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                        "shortDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                        "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                        "shortMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+                    });
+                    break;
 
             }
 
-            d3.format = myFormat.numberFormat;
-            d3.time.format = myFormat.timeFormat;
+            if (myFormat) {
+              d3.format = myFormat.numberFormat;
+              d3.time.format = myFormat.timeFormat;
+            }
         }
         /*** ***/
 
@@ -600,7 +616,7 @@ if (mapConfig) {
             // Formatter function for dataset columns
             if (_.isString(dataSet.formatter) && !_.isEmpty(dataSet.formatter)) {
                 defaultData[dataSet.schema.name].formatter = function(k,v) { 
-                    return d3.format(dataSet.formatter)(v); 
+                    return (_.isNumber(v) ? d3.format(formatter)(v) : v);
                 };
             } else if (_.isFunction(dataSet.formatter)) {
                 (function(i) {
@@ -608,7 +624,7 @@ if (mapConfig) {
                     defaultData[dataSet.schema.name].formatter = function(k,v) { 
                         var formatter = dataSet.formatter(k,v);
                         if (formatter) {
-                            return d3.format(formatter)(v);
+                            return (_.isNumber(v) ? d3.format(formatter)(v) : v);
                         } else {
                             return (_.isNumber(v) ? (d3.format(",d")(v) || d3.format(",.2f")(v)) : v);
                         }

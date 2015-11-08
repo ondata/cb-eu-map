@@ -9,7 +9,7 @@ var mapConfig = {
     debug: true,
 
     // Language code in ISO 639-1:2002 format (see http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
-    language: 'it',
+    language: 'en',
 
     // Google Analytics code for tracking, see http://www.google.it/intl/it/analytics/
     analytics: {
@@ -102,7 +102,7 @@ var mapConfig = {
          */
         attribution: [
             'Powered by <a href="http://www.dataninja.it/" target="_blank">Dataninja</a>',
-            'tileset from <a href="http://mapnik.org/" target="_blank">OSM Mapnik</a>',
+            'tileset from <a href="https://cartodb.com/basemaps" target="_blank">CartoDB</a>',
             'icons from <a href="http://www.flaticon.com/" target="_blank">Freepik</a> and <a href="http://www.simplesharebuttons.com/" target="_blank">Simple Share Buttons</a>',
             //'geocoding by <a href="http://wiki.openstreetmap.org/wiki/Nominatim" target="_blank">OSM Nominatim</a>',
             'code on <a href="https://github.com/Dataninja/advanced-mapping-tool" target="_blank">GitHub</a>.'
@@ -182,7 +182,8 @@ var mapConfig = {
         {
 
             // Inherits attributes from geoType named here
-            type: 'tile'
+            type: 'tile',
+            domain: 'http://{s}.basemaps.cartocdn.com/light_all'
         },
         {
 
@@ -194,6 +195,7 @@ var mapConfig = {
             
             // Inherits attributes from geoType named here
             type: 'thematic',
+            classification: 'StdDeviation',
 
             schema: {
 
@@ -366,15 +368,18 @@ var mapConfig = {
             // For string template, see http://docs.python.org/release/3.1.3/library/string.html#formatspec
             // If missing or return empty string, default formatting function is d3.format(',d')(v) || d3.format(',.2f')(v) || v
             formatter: function(k,v) {
-                return '';
+                if (k.indexOf("Value") > -1) {
+                  return '$,d';
+                } else {
+                  return ',d';
+                }
             }, 
 
             // Inherits attributes from dataType named here
             type: 'choropleth',
-            bins: 3,
-            precision: 0,
+            bins: 4,
+            precision: 1e6,
             palette: 'Reds',
-
             
             schema: {
                 
