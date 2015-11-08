@@ -1,21 +1,21 @@
-REG_CODE	Regione	Numero beni	Valore
-2	Valle d'Aosta	0	
-1	Piemonte	94	
-7	Liguria	24	
-3	Lombardia	77	
-4	Trentino Alto Adige	2	
-5	Veneto	49	
-6	Friuli Venezia-Giulia	0	
-8	Emilia-Romagna	355	36000000
-9	Toscana	26	
-10	Umbria	3	
-11	Marche	2	
-12	Lazio	237	133000000
-13	Abruzzo	41	
-14	Molise	0	
-15	Campania	663	115000000
-17	Basilicata	0	
-16	Puglia	344	28000000
-18	Calabria	399	65000000
-19	Sicilia	1455	217000000
-20	Sardegna	11	
+REG_CODE	Regione	Number of assets	Value of assets	Estimated value?
+2	Valle d'Aosta	0	0	No
+1	Piemonte	94	20500000	Yes
+7	Liguria	24	6000500	Yes
+3	Lombardia	77	22400500	Yes
+4	Trentino Alto Adige	2	450000	Yes
+5	Veneto	49	12001000	Yes
+6	Friuli Venezia-Giulia	0	0	No
+8	Emilia-Romagna	355	36000000	No
+9	Toscana	26	5500500	Yes
+10	Umbria	3	700000	Yes
+11	Marche	2	400000	Yes
+12	Lazio	237	133000000	No
+13	Abruzzo	41	7939500	Yes
+14	Molise	0	0	No
+15	Campania	663	115000000	No
+17	Basilicata	0	0	Yes
+16	Puglia	344	28000000	Yes
+18	Calabria	399	65000000	Yes
+19	Sicilia	1455	217000000	Yes
+20	Sardegna	11	3327500	No

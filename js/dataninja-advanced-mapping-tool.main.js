@@ -1198,9 +1198,13 @@
             var geoLayer = $.geoLayers.filter(function(l) { return (l.type === 'thematic' && l.schema.name === region); })[0];
 
             if (geoLayer.zoom) {
-                map.setZoom(geoLayer.zoom);
-                map.options.maxZoom = geoLayer.zoom;
-                map.options.minZoom = geoLayer.zoom;
+                if (_.isNumber(geoLayer.zoom)) {
+                  map.setZoom(geoLayer.zoom);
+                  map.options.maxZoom = geoLayer.zoom;
+                  map.options.minZoom = geoLayer.zoom;
+                } else {
+                  map.fitBounds(geojson.getBounds());
+                }
             } else {
                 map.options.maxZoom = $.map.zoom.max || null;
                 map.options.minZoom = $.map.zoom.min || null;

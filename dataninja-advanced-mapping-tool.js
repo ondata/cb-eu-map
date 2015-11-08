@@ -2355,7 +2355,7 @@ if (mapConfig) {
                     map.spin(false);
                     
                     if (!svgViewBox) svgViewBox = d3.select(".leaflet-overlay-pane svg").attr("viewBox").split(" ");
-                    if (parameters.t) { map.fitBounds(geojson.getBounds()); }
+                    if (parameters.t || geoLayer.centered) { map.fitBounds(geojson.getBounds()); }
                     if (parameters.i) {
                         geojson.eachLayer(function(l) { 
                             if (l.feature.properties[geo[region].id] == parameters.i) {
@@ -2368,6 +2368,7 @@ if (mapConfig) {
             } else {
                 binData(region);
                 geojson.addData(geo[region].resource);
+                if (geoLayer.centered) { map.fitBounds(geojson.getBounds()); }
                 if (selectedLayer) {
                     selectedLayer = geojson._layers[_.keys(geojson._layers)[selectedLayer.feature._position]];
                     if (!L.Browser.ie && !L.Browser.opera) {

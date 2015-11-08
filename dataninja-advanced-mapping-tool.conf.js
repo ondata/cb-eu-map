@@ -195,6 +195,7 @@ var mapConfig = {
             
             // Inherits attributes from geoType named here
             type: 'thematic',
+            centered: true,
             classification: 'StdDeviation',
 
             schema: {
@@ -222,6 +223,7 @@ var mapConfig = {
             
             // Inherits attributes from geoType named here
             type: 'thematic',
+            centered: true,
 
             schema: {
 
@@ -248,6 +250,7 @@ var mapConfig = {
             
             // Inherits attributes from geoType named here
             type: 'thematic',
+            centered: true,
 
             schema: {
 
@@ -274,6 +277,7 @@ var mapConfig = {
             
             // Inherits attributes from geoType named here
             type: 'thematic',
+            centered: true,
 
             schema: {
 
@@ -300,6 +304,7 @@ var mapConfig = {
             
             // Inherits attributes from geoType named here
             type: 'thematic',
+            centered: true,
 
             schema: {
 
@@ -326,6 +331,7 @@ var mapConfig = {
             
             // Inherits attributes from geoType named here
             type: 'thematic',
+            centered: true,
 
             schema: {
 
@@ -368,7 +374,7 @@ var mapConfig = {
             // For string template, see http://docs.python.org/release/3.1.3/library/string.html#formatspec
             // If missing or return empty string, default formatting function is d3.format(',d')(v) || d3.format(',.2f')(v) || v
             formatter: function(k,v) {
-                if (k.indexOf("Value") > -1) {
+                if (k.indexOf("Value of assets") > -1) {
                   return '$,d';
                 } else {
                   return ',d';
@@ -689,15 +695,18 @@ var mapConfig = {
             // For string template, see http://docs.python.org/release/3.1.3/library/string.html#formatspec
             // If missing or return empty string, default formatting function is d3.format(',d')(v) || d3.format(',.2f')(v) || v
             formatter: function(k,v) {
-                return '';
+                if (k.indexOf("Value of assets") > -1) {
+                  return '$,d';
+                } else {
+                  return ',d';
+                }
             }, 
 
             // Inherits attributes from dataType named here
             type: 'choropleth',
-            bins: 5,
+            bins: 7,
             precision: 0,
             palette: 'Reds',
-
             
             schema: {
                 
@@ -719,15 +728,15 @@ var mapConfig = {
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
                     {
-                        column: 'Numero beni',
-                        label: 'Numero beni confiscati',
-                        description: ''
+                        column: 'Number of assets',
+                        description: '',
+                        precision: 10
+                    },
+                    {
+                        column: 'Value of assets',
+                        description: '',
+                        precision: 1e6
                     }
-                //    {
-                //        column: 'Valore',
-                //        label: 'Valore beni confiscati',
-                //        description: ''
-                //    }
                 //    {
                 //        column: 'Number of buildings and lands',
                 //        label: '',
