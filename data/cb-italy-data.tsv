@@ -12,7 +12,7 @@ REG_CODE	Regione	Number of assets	Value of assets	Estimated value?
 11	Marche	2	400000	Yes
 12	Lazio	237	133000000	No
 13	Abruzzo	41	7939500	Yes
-14	Molise	0	0	No
+#14	Molise	0	0	No
 15	Campania	663	115000000	No
 17	Basilicata	0	0	Yes
 16	Puglia	344	28000000	Yes

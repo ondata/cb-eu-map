@@ -251,6 +251,7 @@ var mapConfig = {
             // Inherits attributes from geoType named here
             type: 'thematic',
             centered: true,
+            classification: 'StdDeviation',
 
             schema: {
 
@@ -258,13 +259,13 @@ var mapConfig = {
                 name: 'spain',
 
                 // Menu label for layer entry
-                menu: 'Spain provinces',
+                menu: 'Spain autonomous communities',
 
                 // Key of id values used for joining
-                id: 'Code',
+                id: 'Com_Code',
 
                 // Key of label values used for tooltip
-                label: 'Name'
+                label: 'Com_Name'
             }
         },
         {
@@ -272,7 +273,7 @@ var mapConfig = {
             // Inherits attributes from geoSource named here
             source: 'file',
             path: 'geo/france/',
-            filename: 'France_depts_0-01.topojson',
+            filename: 'France_regs_0-01.topojson',
             format: 'topojson',
             
             // Inherits attributes from geoType named here
@@ -285,13 +286,13 @@ var mapConfig = {
                 name: 'france',
 
                 // Menu label for layer entry
-                menu: 'France departments',
+                menu: 'France regions',
 
                 // Key of id values used for joining
-                id: 'Dept_Code',
+                id: 'Reg_Code',
 
                 // Key of label values used for tooltip
-                label: 'Dept_Name'
+                label: 'Reg_Name'
             }
         },
         {
@@ -384,7 +385,7 @@ var mapConfig = {
             // Inherits attributes from dataType named here
             type: 'choropleth',
             bins: 4,
-            precision: 1e6,
+            precision: 0,
             palette: 'Reds',
             
             schema: {
@@ -414,18 +415,9 @@ var mapConfig = {
                     {
                         column: 'Value of assets',
                         label: '',
+                        precision: 0,
                         description: ''
                     }
-                //    {
-                //        column: 'Number of buildings and lands',
-                //        label: '',
-                //        description: ''
-                //    },
-                //    {
-                //        column: 'Value of buildings and lands',
-                //        label: '',
-                //        description: ''
-                //    }
                     //...
                 ],
 
@@ -439,7 +431,7 @@ var mapConfig = {
             // Inherits attributes from dataSource named here
             source: 'file',
             path: 'data/',
-            filename: 'cb-spain-data.tsv',
+            filename: 'cb-spain-province-data.tsv',
             format: 'tsv',
 
             // Transformation of the ajax results before their using
@@ -461,7 +453,7 @@ var mapConfig = {
 
             // Inherits attributes from dataType named here
             type: 'choropleth',
-            bins: 5,
+            bins: 7,
             precision: 0,
             palette: 'Reds',
 
@@ -485,16 +477,15 @@ var mapConfig = {
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
-                //    {
-                //        column: 'Number of assets',
-                //        label: '',
-                //        description: ''
-                //    }
                     {
-                        column: '2013',
-                        label: 'Confiscation 2013',
+                        column: 'Number of assets',
                         description: ''
                     }
+                //    {
+                //        column: '2013',
+                //        label: 'Confiscation 2013',
+                //        description: ''
+                //    }
                 //    {
                 //        column: 'Number of buildings and lands',
                 //        label: '',
@@ -518,7 +509,7 @@ var mapConfig = {
             // Inherits attributes from dataSource named here
             source: 'file',
             path: 'data/',
-            filename: 'cb-france-data.tsv',
+            filename: 'cb-france-region-data.tsv',
             format: 'tsv',
 
             // Transformation of the ajax results before their using
@@ -535,7 +526,11 @@ var mapConfig = {
             // For string template, see http://docs.python.org/release/3.1.3/library/string.html#formatspec
             // If missing or return empty string, default formatting function is d3.format(',d')(v) || d3.format(',.2f')(v) || v
             formatter: function(k,v) {
-                return '';
+                if (k.indexOf("Value of assets") > -1) {
+                  return '$,d';
+                } else {
+                  return ',d';
+                }
             }, 
 
             // Inherits attributes from dataType named here
@@ -565,12 +560,12 @@ var mapConfig = {
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
                     {
-                        column: 'Cash seizured registered',
+                        column: 'Number of assets',
                         label: '',
                         description: ''
                     },
                     {
-                        column: 'Real estate seizures registered',
+                        column: 'Value of assets',
                         label: '',
                         description: ''
                     }
@@ -616,12 +611,16 @@ var mapConfig = {
             // For string template, see http://docs.python.org/release/3.1.3/library/string.html#formatspec
             // If missing or return empty string, default formatting function is d3.format(',d')(v) || d3.format(',.2f')(v) || v
             formatter: function(k,v) {
-                return '';
+                if (k.indexOf("Value of assets") > -1) {
+                  return '$,d';
+                } else {
+                  return ',d';
+                }
             }, 
 
             // Inherits attributes from dataType named here
             type: 'choropleth',
-            bins: 5,
+            bins: 7,
             precision: 0,
             palette: 'Reds',
 
@@ -649,22 +648,12 @@ var mapConfig = {
                 //        column: 'Number of assets',
                 //        label: '',
                 //        description: ''
-                //    }
-                    {
-                        column: '2013',
-                        label: 'Confiscation amount in 2013',
-                        description: ''
-                    }
-                //    {
-                //        column: 'Number of buildings and lands',
-                //        label: '',
-                //        description: ''
                 //    },
-                //    {
-                //        column: 'Value of buildings and lands',
-                //        label: '',
-                //        description: ''
-                //    }
+                    {
+                        column: 'Value of assets',
+                        description: '',
+                        precision: 1e3
+                    }
                     //...
                 ],
 
