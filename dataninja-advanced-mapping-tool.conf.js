@@ -87,7 +87,7 @@ var mapConfig = {
         zoom: {
             init: 5,
             max: 8,
-            min: 4,
+            min: 5,
             scrollWheel: true
         },
 
@@ -325,6 +325,7 @@ var mapConfig = {
         {
 
             // Inherits attributes from geoSource named here
+            active: false,
             source: 'file',
             path: 'geo/uk/',
             filename: 'England_hmcts.topojson',
@@ -385,7 +386,7 @@ var mapConfig = {
             // Inherits attributes from dataType named here
             type: 'choropleth',
             bins: 4,
-            precision: 0,
+            precision: 1,
             palette: 'Reds',
             
             schema: {
@@ -415,7 +416,7 @@ var mapConfig = {
                     {
                         column: 'Value of assets',
                         label: '',
-                        precision: 0,
+                        precision: 1e6,
                         description: ''
                     }
                     //...
@@ -454,7 +455,7 @@ var mapConfig = {
             // Inherits attributes from dataType named here
             type: 'choropleth',
             bins: 7,
-            precision: 0,
+            precision: 1,
             palette: 'Reds',
 
             
@@ -536,7 +537,7 @@ var mapConfig = {
             // Inherits attributes from dataType named here
             type: 'choropleth',
             bins: 5,
-            precision: 0,
+            precision: 1,
             palette: 'Reds',
 
             
@@ -621,7 +622,7 @@ var mapConfig = {
             // Inherits attributes from dataType named here
             type: 'choropleth',
             bins: 7,
-            precision: 0,
+            precision: 1,
             palette: 'Reds',
 
             
@@ -694,7 +695,7 @@ var mapConfig = {
             // Inherits attributes from dataType named here
             type: 'choropleth',
             bins: 7,
-            precision: 0,
+            precision: 1,
             palette: 'Reds',
             
             schema: {
@@ -772,7 +773,7 @@ var mapConfig = {
             // Inherits attributes from dataType named here
             type: 'choropleth',
             bins: 5,
-            precision: 0,
+            precision: 1,
             palette: 'Reds',
 
             
