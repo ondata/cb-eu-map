@@ -404,7 +404,7 @@ var mapConfig = {
                 id: 'Id',
 
                 // Legend description
-                description: '',
+                description: '[Layer description]',
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
@@ -417,7 +417,7 @@ var mapConfig = {
                         column: 'Value of assets',
                         label: '',
                         precision: 1e6,
-                        description: ''
+                        description: '[Value of assets description]'
                     }
                     //...
                 ],
@@ -474,13 +474,14 @@ var mapConfig = {
                 id: 'Codigo',
 
                 // Legend description
-                description: '',
+                description: '[Layer description]',
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
                     {
                         column: 'Number of assets',
-                        description: ''
+                        label: '',
+                        description: '[Number of assets description]'
                     }
                 //    {
                 //        column: '2013',
@@ -556,19 +557,19 @@ var mapConfig = {
                 id: 'Code',
 
                 // Legend description
-                description: '',
+                description: '[Layer description]',
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
                     {
                         column: 'Number of assets',
                         label: '',
-                        description: ''
+                        description: '[Number of assets description]'
                     },
                     {
                         column: 'Value of assets',
                         label: '',
-                        description: ''
+                        description: '[Value of assets description]'
                     }
                 //    {
                 //        column: 'Number of buildings and lands',
@@ -641,7 +642,7 @@ var mapConfig = {
                 id: 'Code',
 
                 // Legend description
-                description: '',
+                description: '[Layer description]',
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
@@ -652,7 +653,7 @@ var mapConfig = {
                 //    },
                     {
                         column: 'Value of assets',
-                        description: '',
+                        description: '[Value of assets description]',
                         precision: 1e3
                     }
                     //...
@@ -713,18 +714,18 @@ var mapConfig = {
                 id: 'REG_CODE',
 
                 // Legend description
-                description: '',
+                description: '[Layer description]',
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
                     {
                         column: 'Number of assets',
-                        description: '',
+                        description: '[Number of assets description]',
                         precision: 10
                     },
                     {
                         column: 'Value of assets',
-                        description: '',
+                        description: '[Value of assets description]',
                         precision: 1e6
                     }
                 //    {
@@ -792,19 +793,19 @@ var mapConfig = {
                 id: 'HMCTS AREA',
 
                 // Legend description
-                description: '',
+                description: '[Layer description]',
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
                     {
                         column: 'Volume imposed 2014',
                         label: '',
-                        description: ''
+                        description: '[Volume imposed description]'
                     },
                     {
                         column: 'Value imposed 2014',
                         label: '',
-                        description: ''
+                        description: '[Value imposed description]'
                     }
                 //    {
                 //        column: 'Number of buildings and lands',
