@@ -1,23 +1,23 @@
 Code	Region	Number of assets	Value of assets
-A	Alsace	2600000	7
-B	Aquitaine	4800000	27
-C	Auvergne	1200000	4
-P	Basse-Normandie	1300000	5
-D	Bourgogne	1000000	10
-E	Bretagne	1800000	23
-F	Centre	3500000	6
-G	Champagne-Ardenne	1300000	12
-H	Corse	500000	3
-I	Franche-Comté	1200000	6
-Q	Haute-Normandie	1700000	13
-J	Ile-de-France	63500000	138
-K	Languedoc-Roussillon	5000000	7
-L	Limousin	800000	17
-M	Lorraine	4000000	24
-N	Midi-Pyrénées	2700000	34
-O	Nord-Pas-de-Calais	9400000	55
-R	Pays de la Loire	1100000	6
-S	Picardie	1300000	5
-T	Poitou-Charentes	800000	12
-U	Provence-Alpes-Cote d'Azur	15700000	32
-V	Rhone-Alpes	10000000	54
+A	Alsace	7	2600000
+B	Aquitaine	27	4800000
+C	Auvergne	4	1200000
+P	Basse-Normandie	5	1300000
+D	Bourgogne	10	1000000
+E	Bretagne	23	1800000
+F	Centre	6	3500000
+G	Champagne-Ardenne	12	1300000
+H	Corse	3	500000
+I	Franche-Comté	6	1200000
+Q	Haute-Normandie	13	1700000
+J	Ile-de-France	138	63500000
+K	Languedoc-Roussillon	7	5000000
+L	Limousin	17	800000
+M	Lorraine	24	4000000
+N	Midi-Pyrénées	34	2700000
+O	Nord-Pas-de-Calais	55	9400000
+R	Pays de la Loire	6	1100000
+S	Picardie	5	1300000
+T	Poitou-Charentes	12	800000
+U	Provence-Alpes-Cote d'Azur	32	15700000
+V	Rhone-Alpes	54	10000000

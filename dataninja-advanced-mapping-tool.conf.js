@@ -6,7 +6,7 @@
 var mapConfig = {
 
     // Debug mode activation with logs in console
-    debug: true,
+    debug: false,
 
     // Language code in ISO 639-1:2002 format (see http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
     language: 'en',
@@ -325,10 +325,9 @@ var mapConfig = {
         {
 
             // Inherits attributes from geoSource named here
-            active: false,
             source: 'file',
             path: 'geo/uk/',
-            filename: 'England_hmcts.topojson',
+            filename: 'Great_Britain_regions.topojson',
             format: 'topojson',
             
             // Inherits attributes from geoType named here
@@ -341,13 +340,13 @@ var mapConfig = {
                 name: 'uk',
 
                 // Menu label for layer entry
-                menu: 'UK HMCTS',
+                menu: 'UK Regions',
 
                 // Key of id values used for joining
-                id: 'Name',
+                id: 'RGN14CD',
 
                 // Key of label values used for tooltip
-                label: 'Name'
+                label: 'RGN14NM'
             }
         }
     ],
@@ -751,7 +750,7 @@ var mapConfig = {
             // Inherits attributes from dataSource named here
             source: 'file',
             path: 'data/',
-            filename: 'cb-uk-data.tsv',
+            filename: 'cb-uk-region-data.tsv',
             format: 'tsv',
 
             // Transformation of the ajax results before their using
@@ -768,7 +767,11 @@ var mapConfig = {
             // For string template, see http://docs.python.org/release/3.1.3/library/string.html#formatspec
             // If missing or return empty string, default formatting function is d3.format(',d')(v) || d3.format(',.2f')(v) || v
             formatter: function(k,v) {
-                return '';
+                if (k.indexOf("Value of assets") > -1) {
+                  return '$,d';
+                } else {
+                  return ',d';
+                }
             }, 
 
             // Inherits attributes from dataType named here
@@ -790,7 +793,7 @@ var mapConfig = {
                 layer: 'uk',
 
                 // Key of id values used for join
-                id: 'HMCTS AREA',
+                id: 'Code',
 
                 // Legend description
                 description: '[Layer description]',
@@ -798,14 +801,16 @@ var mapConfig = {
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
                     {
-                        column: 'Volume imposed 2014',
+                        column: 'Number of assets',
                         label: '',
-                        description: '[Volume imposed description]'
+                        precision: 10,
+                        description: '[Number of assets description]'
                     },
                     {
-                        column: 'Value imposed 2014',
+                        column: 'Value of assets',
                         label: '',
-                        description: '[Value imposed description]'
+                        precision: 1e3,
+                        description: '[Value of assets description]'
                     }
                 //    {
                 //        column: 'Number of buildings and lands',
