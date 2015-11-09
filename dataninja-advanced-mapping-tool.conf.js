@@ -251,7 +251,6 @@ var mapConfig = {
             // Inherits attributes from geoType named here
             type: 'thematic',
             centered: true,
-            classification: 'StdDeviation',
 
             schema: {
 
@@ -453,10 +452,9 @@ var mapConfig = {
 
             // Inherits attributes from dataType named here
             type: 'choropleth',
-            bins: 7,
-            precision: 1,
+            bins: 5,
+            precision: 10,
             palette: 'Reds',
-
             
             schema: {
                 
@@ -563,11 +561,13 @@ var mapConfig = {
                     {
                         column: 'Number of assets',
                         label: '',
+                        precision: 10,
                         description: '[Number of assets description]'
                     },
                     {
                         column: 'Value of assets',
                         label: '',
+                        precision: 1e3,
                         description: '[Value of assets description]'
                     }
                 //    {
@@ -621,7 +621,7 @@ var mapConfig = {
 
             // Inherits attributes from dataType named here
             type: 'choropleth',
-            bins: 7,
+            bins: 5,
             precision: 1,
             palette: 'Reds',
 
