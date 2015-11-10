@@ -125,10 +125,10 @@ var mapConfig = {
         title: 'Confiscations for billion euros',
 
         // Initial status (can be overwritten by 'summary' get parameter)
-        closed: false,
+        closed: true,
 
         // HTML content of the description
-        content: '<p><h3>Confiscations for billion euros</h3>Over the last decade the European Union has started to fight back against those activities. The transnational nature of criminal investments and the presence of ‘liquid’ crime groups , which are able to adapt to different situations and overcome any legislative hurdle, required an intervention from the European authorities. The freezing and confiscation of assets and proceeds of crime has become a priority in the EU battle against organised crime.</p>'
+        content: '<p><h3>Confiscations for billion euros</h3>Over the last decade the European Union has started to fight back against those activities. The transnational nature of criminal investments and the presence of ‘liquid’ crime groups , which are able to adapt to different situations and overcome any legislative hurdle, required an intervention from the European authorities. The freezing and confiscation of assets and proceeds of crime has become a priority in the EU battle against organised crime. The map shows data of assets seized, according with reports from National Agencies for confiscations: ANBSC (Italy), AGRASC (France), Bundeskriminalamt (Germany), HM Courts & Tribunals Service (United Kingdom), Fondo de Bienes Decomisados (Spain). </p>'
     },
 
     // Tooltip control on mouse over regions in vectorial geolayers
