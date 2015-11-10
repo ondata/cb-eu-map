@@ -415,7 +415,7 @@ var mapConfig = {
                         column: 'Value of assets',
                         label: '',
                         precision: 1e6,
-                        description: '[Value of assets description]'
+                        description: 'Value of assets confiscated through 2014'
                     }
                     //...
                 ],
@@ -478,7 +478,7 @@ var mapConfig = {
                     {
                         column: 'Number of assets',
                         label: '',
-                        description: '[Number of assets description]'
+                        description: 'Figures of assets confiscated through 2014'
                     }
                 //    {
                 //        column: '2013',
