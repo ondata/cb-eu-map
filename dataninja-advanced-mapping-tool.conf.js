@@ -88,7 +88,7 @@ var mapConfig = {
             init: 5,
             max: 8,
             min: 5,
-            scrollWheel: true
+            scrollWheel: false
         },
 
         // Center of the map
