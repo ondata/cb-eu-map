@@ -5,3 +5,7 @@ body,
 .legend {
     max-width: none;
 }
+
+#infowindow.closed {
+  display: none;
+}

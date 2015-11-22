@@ -1,17 +1,17 @@
-Code	Land	Value of assets
-01	Baden-Württemberg	30535997
-02	Bayern	41774795
-16	Berlin	13472847
-11	Brandenburg	6785029
-03	Bremen	999559
-04	Hamburg	10373904
-05	Hessen	45015019
-12	Mecklenburg-Vorpommern	1254727
-06	Niedersachsen	21273802
-07	Nordrhein-Westfalen	52000000
-08	Rheinland-Pfalz	5379968
-09	Saarland	4557019
-13	Sachsen	5192820
-14	Sachsen-Anhalt	2505067
-10	Schleswig-Holstein	3516790
-15	Thüringen	6382725
+Code	Land	Value of assets	Year
+01	Baden-Württemberg	30535997	2014
+02	Bayern	41774795	2014
+16	Berlin	13472847	2014
+11	Brandenburg	6785029	2013
+03	Bremen	999559	2014
+04	Hamburg	10373904	2014
+05	Hessen	45015019	2014
+12	Mecklenburg-Vorpommern	1254727	2013
+06	Niedersachsen	21273802	2014
+07	Nordrhein-Westfalen	52000000	2014
+08	Rheinland-Pfalz	5379968	2014
+09	Saarland	4557019	2014
+13	Sachsen	5192820	2014
+14	Sachsen-Anhalt	2505067	2014
+10	Schleswig-Holstein	3516790	2014
+15	Thüringen	6382725	2014

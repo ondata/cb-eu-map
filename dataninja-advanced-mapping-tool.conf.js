@@ -88,7 +88,7 @@ var mapConfig = {
             init: 5,
             max: 8,
             min: 5,
-            scrollWheel: true
+            scrollWheel: false
         },
 
         // Center of the map
@@ -101,11 +101,12 @@ var mapConfig = {
          * Set a string item per service
          */
         attribution: [
-            'Powered by <a href="http://www.dataninja.it/" target="_blank">Dataninja</a>',
+            'Powered by <a href="http://www.ondata.it/" target="_blank">onData</a>',
+            'developed by <a href="http://www.dataninja.it/" target="_blank">Dataninja</a>',
             'tileset from <a href="https://cartodb.com/basemaps" target="_blank">CartoDB</a>',
             'icons from <a href="http://www.flaticon.com/" target="_blank">Freepik</a> and <a href="http://www.simplesharebuttons.com/" target="_blank">Simple Share Buttons</a>',
             //'geocoding by <a href="http://wiki.openstreetmap.org/wiki/Nominatim" target="_blank">OSM Nominatim</a>',
-            'code on <a href="https://github.com/Dataninja/advanced-mapping-tool" target="_blank">GitHub</a>.'
+            'code on <a href="https://github.com/ondata/cb-eu-map/" target="_blank">GitHub</a>.'
         ]
     },
 
@@ -150,7 +151,7 @@ var mapConfig = {
         active: true,
 
         // Title at the top of the control
-        title: '',
+        title: 'Legend of colors',
 
         // Description at the bottom, overridable by dataset configuration
         description: '',
@@ -196,7 +197,7 @@ var mapConfig = {
             // Inherits attributes from geoType named here
             type: 'thematic',
             centered: true,
-            classification: 'StdDeviation',
+            //classification: 'StdDeviation',
 
             schema: {
 
@@ -231,7 +232,7 @@ var mapConfig = {
                 name: 'italy',
 
                 // Menu label for layer entry
-                menu: 'Italy regions',
+                menu: 'Italian regions (2014/15)',
 
                 // Key of id values used for joining
                 id: 'COD_REG',
@@ -258,7 +259,7 @@ var mapConfig = {
                 name: 'spain',
 
                 // Menu label for layer entry
-                menu: 'Spain autonomous communities',
+                menu: 'Spanish autonomous communities (2014)',
 
                 // Key of id values used for joining
                 id: 'Com_Code',
@@ -285,7 +286,7 @@ var mapConfig = {
                 name: 'france',
 
                 // Menu label for layer entry
-                menu: 'France regions',
+                menu: 'French regions (2011/12)',
 
                 // Key of id values used for joining
                 id: 'Reg_Code',
@@ -312,7 +313,7 @@ var mapConfig = {
                 name: 'germany',
 
                 // Menu label for layer entry
-                menu: 'Germany lands',
+                menu: 'German federal states (2014)',
 
                 // Key of id values used for joining
                 id: 'Code',
@@ -339,7 +340,7 @@ var mapConfig = {
                 name: 'uk',
 
                 // Menu label for layer entry
-                menu: 'UK Regions',
+                menu: 'England and Wales regions (2014/15)',
 
                 // Key of id values used for joining
                 id: 'RGN14CD',
@@ -376,6 +377,8 @@ var mapConfig = {
             formatter: function(k,v) {
                 if (k.indexOf("Value of assets") > -1) {
                   return '$,d';
+                } else if (k.indexOf("period") > -1) {
+                  return 'd';
                 } else {
                   return ',d';
                 }
@@ -385,7 +388,7 @@ var mapConfig = {
             type: 'choropleth',
             bins: 4,
             precision: 1,
-            palette: 'Reds',
+            palette: 'Blues',
             
             schema: {
                 
@@ -402,7 +405,7 @@ var mapConfig = {
                 id: 'Id',
 
                 // Legend description
-                description: '[Layer description]',
+                description: 'Estimated average of the value of confiscated assets.', 
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
@@ -414,8 +417,7 @@ var mapConfig = {
                     {
                         column: 'Value of assets',
                         label: '',
-                        precision: 1e6,
-                        description: 'Value of assets confiscated through 2014'
+                        precision: 1e6
                     }
                     //...
                 ],
@@ -454,7 +456,7 @@ var mapConfig = {
             type: 'choropleth',
             bins: 5,
             precision: 10,
-            palette: 'Reds',
+            palette: 'Blues',
             
             schema: {
                 
@@ -471,28 +473,18 @@ var mapConfig = {
                 id: 'Codigo',
 
                 // Legend description
-                description: '[Layer description]',
+                description: '',
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
                     {
                         column: 'Number of assets',
                         label: '',
-                        description: 'Figures of assets confiscated through 2014'
+                        description: "Number of confiscated assets in 2014.<br>Source: <a href='http://www.pnsd.msssi.gob.es/' target='_blank'>Fondo Bienes Decomisados</a>."
                     }
                 //    {
                 //        column: '2013',
                 //        label: 'Confiscation 2013',
-                //        description: ''
-                //    }
-                //    {
-                //        column: 'Number of buildings and lands',
-                //        label: '',
-                //        description: ''
-                //    },
-                //    {
-                //        column: 'Value of buildings and lands',
-                //        label: '',
                 //        description: ''
                 //    }
                     //...
@@ -536,7 +528,7 @@ var mapConfig = {
             type: 'choropleth',
             bins: 5,
             precision: 1,
-            palette: 'Reds',
+            palette: 'Blues',
 
             
             schema: {
@@ -554,7 +546,7 @@ var mapConfig = {
                 id: 'Code',
 
                 // Legend description
-                description: '[Layer description]',
+                description: '',
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
@@ -562,24 +554,14 @@ var mapConfig = {
                         column: 'Number of assets',
                         label: '',
                         precision: 10,
-                        description: '[Number of assets description]'
+                        description: "Total regional real estate (in number) seizures (2011-2012).<br>Source: <a href='http://www.justice.gouv.fr/justice-penale-11330/agrasc-12207/' target='_blank'>Agrasc</a>."
                     },
                     {
                         column: 'Value of assets',
                         label: '',
                         precision: 1e3,
-                        description: '[Value of assets description]'
+                        description: "Total and average seized cash (in value) seizures (2011-2012).<br>Source: <a href='http://www.ocportfolio.eu/' target='_blank'>OCPortfolio</a>."
                     }
-                //    {
-                //        column: 'Number of buildings and lands',
-                //        label: '',
-                //        description: ''
-                //    },
-                //    {
-                //        column: 'Value of buildings and lands',
-                //        label: '',
-                //        description: ''
-                //    }
                     //...
                 ],
 
@@ -614,6 +596,8 @@ var mapConfig = {
             formatter: function(k,v) {
                 if (k.indexOf("Value of assets") > -1) {
                   return '$,d';
+                } else if (k.indexOf("Year") > -1) {
+                  return 'd';
                 } else {
                   return ',d';
                 }
@@ -623,7 +607,7 @@ var mapConfig = {
             type: 'choropleth',
             bins: 5,
             precision: 1,
-            palette: 'Reds',
+            palette: 'Blues',
 
             
             schema: {
@@ -641,7 +625,7 @@ var mapConfig = {
                 id: 'Code',
 
                 // Legend description
-                description: '[Layer description]',
+                description: '',
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
@@ -652,7 +636,7 @@ var mapConfig = {
                 //    },
                     {
                         column: 'Value of assets',
-                        description: '[Value of assets description]',
+                        description: "Value of confiscated assets in 2013-2014.<br>Source: <a href='http://www.bka.de/EN/' target='_blank'>Bundeskriminalamt</a>.",
                         precision: 1e3
                     }
                     //...
@@ -696,7 +680,7 @@ var mapConfig = {
             type: 'choropleth',
             bins: 7,
             precision: 1,
-            palette: 'Reds',
+            palette: 'Blues',
             
             schema: {
                 
@@ -719,12 +703,13 @@ var mapConfig = {
                 menu: [
                     {
                         column: 'Number of assets',
-                        description: '[Number of assets description]',
+                        label: '',
+                        description: "Average number of confiscated assets per year from July, 2014 to June, 2015.<br>Source: <a href='http://www.interno.gov.it/' target='_blank'>Ministero degli Interni</a> and <a href='http://www.benisequestraticonfiscati.it/Joomla/' target='_blank'>ANBSC</a>.",
                         precision: 10
                     },
                     {
                         column: 'Value of assets',
-                        description: '[Value of assets description]',
+                        description: "Estimated average value of confiscated assets per year from July, 2014 to June, 2015.<br>Source: <a href='http://www.interno.gov.it/' target='_blank'>Ministero degli Interni</a> and <a href='http://www.benisequestraticonfiscati.it/Joomla/' target='_blank'>ANBSC</a>.",
                         precision: 1e6
                     }
                 //    {
@@ -778,7 +763,7 @@ var mapConfig = {
             type: 'choropleth',
             bins: 5,
             precision: 1,
-            palette: 'Reds',
+            palette: 'Blues',
 
             
             schema: {
@@ -796,7 +781,7 @@ var mapConfig = {
                 id: 'Code',
 
                 // Legend description
-                description: '[Layer description]',
+                description: '',
 
                 // Choroplethable columns with custom label, description and bins number
                 menu: [
@@ -804,13 +789,19 @@ var mapConfig = {
                         column: 'Number of assets',
                         label: '',
                         precision: 10,
-                        description: '[Number of assets description]'
+                        description: "" + 
+                          "Number of confiscated assets from April 1, 2014 to March 31, 2015.<br>" + 
+                          "Single court data are aggregated per region.<br>" + 
+                          "Source: <a href='http://www.justice.gov.uk/' target='_blank'>HM Courts and Tribunal Service</a> after a FOIA-based request."
                     },
                     {
                         column: 'Value of assets',
                         label: '',
                         precision: 1e3,
-                        description: '[Value of assets description]'
+                        description: "" + 
+                          "Value of confiscated assets from April 1, 2014 to March 31, 2015.<br>" + 
+                          "Single court data are aggregated per region and<br>converted from pound to euro (exchange rate: 11/9/2015).<br>" + 
+                          "Source: <a href='http://www.justice.gov.uk/' target='_blank'>HM Courts and Tribunal Service</a> after a FOIA-based request."
                     }
                 //    {
                 //        column: 'Number of buildings and lands',
@@ -881,7 +872,7 @@ var mapConfig = {
         downloads: {
 
             // Enable or not
-            active: true,
+            active: false,
 
             // License of downloadable datasets
             license: 'Creative Commons Attribution <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0 International</a>.',
@@ -928,7 +919,7 @@ var mapConfig = {
         shareButtons: {
 
             // Enable or not
-            active: false,
+            active: true,
 
             // Text prepended to title of each share icon (+ 'su [Twitter | Facebook | Google Plus | Linkedin | ...]')
             title: 'Share',
