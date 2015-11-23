@@ -388,7 +388,7 @@ var mapConfig = {
             type: 'choropleth',
             bins: 4,
             precision: 1,
-            palette: 'Blues',
+            palette: 'Reds',
             
             schema: {
                 
@@ -456,7 +456,7 @@ var mapConfig = {
             type: 'choropleth',
             bins: 5,
             precision: 10,
-            palette: 'Blues',
+            palette: 'Reds',
             
             schema: {
                 
@@ -528,7 +528,7 @@ var mapConfig = {
             type: 'choropleth',
             bins: 5,
             precision: 1,
-            palette: 'Blues',
+            palette: 'Reds',
 
             
             schema: {
@@ -607,7 +607,7 @@ var mapConfig = {
             type: 'choropleth',
             bins: 5,
             precision: 1,
-            palette: 'Blues',
+            palette: 'Reds',
 
             
             schema: {
@@ -680,7 +680,7 @@ var mapConfig = {
             type: 'choropleth',
             bins: 7,
             precision: 1,
-            palette: 'Blues',
+            palette: 'Reds',
             
             schema: {
                 
@@ -763,7 +763,7 @@ var mapConfig = {
             type: 'choropleth',
             bins: 5,
             precision: 1,
-            palette: 'Blues',
+            palette: 'Reds',
 
             
             schema: {
