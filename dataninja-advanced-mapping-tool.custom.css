@@ -9,3 +9,10 @@ body,
 #infowindow.closed {
   display: none;
 }
+
+#summary-footer {
+  font-size:smaller;
+  position:absolute;
+  bottom:0;
+  padding-right:20px;
+}
