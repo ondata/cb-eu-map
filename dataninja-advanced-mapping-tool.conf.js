@@ -85,9 +85,9 @@ var mapConfig = {
 
         // Zoom options
         zoom: {
-            init: 5,
+            init: 4,
             max: 8,
-            min: 5,
+            min: 4,
             scrollWheel: false
         },
 
