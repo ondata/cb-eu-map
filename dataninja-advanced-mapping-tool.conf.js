@@ -14,7 +14,7 @@ var mapConfig = {
     // Google Analytics code for tracking, see http://www.google.it/intl/it/analytics/
     analytics: {
         active: true,
-        ua: 'UA-36931336-1'
+        ua: 'UA-90058-82'
     },
 
     // URL shortener service configuration (via yourls)
