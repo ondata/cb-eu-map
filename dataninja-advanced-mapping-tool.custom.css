@@ -3,7 +3,7 @@ body,
 }
 
 .legend {
-    max-width: none;
+    max-width: 50%;
 }
 
 #infowindow.closed {

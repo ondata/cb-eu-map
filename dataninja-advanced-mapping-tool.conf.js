@@ -264,7 +264,7 @@ var mapConfig = {
                 name: 'spain',
 
                 // Menu label for layer entry
-                menu: 'Spanish autonomous communities (2014)',
+                menu: 'Spanish provinces (2014)',
 
                 // Key of id values used for joining
                 id: 'Com_Code',
