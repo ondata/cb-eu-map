@@ -132,7 +132,7 @@ var mapConfig = {
         content: '<p>' + 
           '<h3>Confiscations for billion euros</h3>' + 
           '<p>Over the last decade the European Union has started to fight back against those activities. The transnational nature of criminal investments and the presence of <em>liquid</em> crime groups, which are able to adapt to different situations and overcome any legislative hurdle, required an intervention from the European authorities. The freezing and confiscation of assets and proceeds of crime has become a priority in the EU battle against organised crime.</p>' + 
-          '<p>This map shows data of assets seized, according with reports from National Agencies for Confiscations: ANBSC (Italy), AGRASC (France), Bundeskriminalamt (Germany), HM Courts & Tribunals Service (United Kingdom), Fondo de Bienes Decomisados (Spain).</p>' + 
+          '<p>This map shows data of assets seized, according with reports from National Agencies for Confiscations: ANBSC (Italy), AGRASC (France), Bundeskriminalamt and Landeskriminalämter (Germany), HM Courts & Tribunals Service (United Kingdom), Fondo de Bienes Decomisados (Spain).</p>' + 
           '<p>Confiscati Bene is an European investigation about organized crime and confiscated assets. Official website: <a href="http://www.confiscatibene.it/" target="_blank">confiscatibene.it</a>.</p>' + 
           '<p id="summary-footer">CC BY <a href="http://www.confiscatibene.it" target="_blank">Confiscati Bene</a>, powered by <a href="https://github.com/ondata" target="_blank">onData</a>, developed by <a href="http://www.dataninja.it" target="_blank">Dataninja</a>, funded by <a href="http://www.journalismfund.eu/" target="_blank">Journalismfund</a>, source on <a href="https://github.com/ondata/cb-eu-map" target="_blank">Github</a>.</p>'
     },
@@ -641,7 +641,7 @@ var mapConfig = {
                 //    },
                     {
                         column: 'Value of assets',
-                        description: "Value of confiscated assets in 2013-2014.<br>Source: <a href='http://www.bka.de/EN/' target='_blank'>Bundeskriminalamt</a>.",
+                        description: "Value of confiscated assets in 2013-2014.<br>Source: <a href='http://www.bka.de/EN/' target='_blank'>Bundeskriminalamt</a>, <a href='http://www.polizei.de/' target='_blank'>Landeskriminalämter</a>.",
                         precision: 1e3
                     }
                     //...
